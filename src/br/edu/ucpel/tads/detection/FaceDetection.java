@@ -1,5 +1,6 @@
 package br.edu.ucpel.tads.detection;
 
+import com.googlecode.javacv.JavaCvErrorCallback;  
 import static com.googlecode.javacv.cpp.opencv_core.*;
 import com.googlecode.javacv.cpp.opencv_core.CvMemStorage;
 import com.googlecode.javacv.cpp.opencv_core.CvRect;
@@ -8,9 +9,10 @@ import com.googlecode.javacv.cpp.opencv_core.CvSeq;
 import com.googlecode.javacv.cpp.opencv_core.IplImage;
 import static com.googlecode.javacv.cpp.opencv_highgui.*;
 import static com.googlecode.javacv.cpp.opencv_imgproc.CV_BGR2GRAY;
+import static com.googlecode.javacv.cpp.opencv_imgproc.cvCvtColor;
 import com.googlecode.javacv.cpp.opencv_objdetect.CvHaarClassifierCascade;
 import static com.googlecode.javacv.cpp.opencv_objdetect.cvHaarDetectObjects;
-import static com.googlecode.javacv.cpp.opencv_imgproc.cvCvtColor;  
+
 
 
 public class FaceDetection {
@@ -19,10 +21,12 @@ public class FaceDetection {
     private static final String CASCADE_FILE = "haarcascade_frontalface_alt.xml";
 
     public static void main(String[] args) throws Exception {
+        
+        new JavaCvErrorCallback().hashCode();
 
         // Load the original image.
         args = new String[1];
-        args[0] = "/Users/vgsantoniazzi/NetBeansProjects/TCC-Server-side/data/01.jpg";
+        args[0] = "data/01.jpg";
         
         IplImage originalImage = cvLoadImage(args[0], 1);
 
