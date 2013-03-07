@@ -794,6 +794,6 @@ public class FaceRecognition {
         //faceRecognition.learn("data/some-training-faces.txt");
         faceRecognition.learn("data/all10.txt");
         //faceRecognition.recognizeFileList("data/some-test-faces.txt");
-        faceRecognition.recognizeFileList("data/lower3.txt");
+        faceRecognition.recognizeFileList("data/lower.txt");
     }
 }
